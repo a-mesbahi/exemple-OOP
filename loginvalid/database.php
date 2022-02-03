@@ -12,7 +12,7 @@ class db{
     private $password;
     private $dbName;
 
-    protected function connection(){
+    public function connection(){
         $this->serverName = "localhost";
         $this->userName = "Amine";
         $this->password = "teste123";
@@ -23,7 +23,12 @@ class db{
     }
 }
 
+
 class user extends db{
+    // function __construct()
+    // {
+    //     $name
+    // }
     public function getPizzas(){
         $sql = "SELECT * FROM pizza";
         $result = $this->connection()->query($sql);
@@ -31,10 +36,9 @@ class user extends db{
         return $data ; 
     }
     public function setPizzas($name, $date, $elements ){
-        $sql = "INSERT INTO (createdBy,date, elements)
-        VALUES ()";
-        $result = $this->connection()->query($sql);
-        
+        $sql = "INSERT INTO pizza(createdBy,date, elements)
+        VALUES ('$name', '$date', '$elements')";
+        return $sql;
     }
 }
 

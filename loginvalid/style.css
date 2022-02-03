@@ -50,11 +50,13 @@ input{
     /* height: max-content; */
     padding: 20px 10px;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     /* background-color: darkolivegreen; */
 }
 .pizza-card{
     box-sizing: border-box;
-    width: 200px;
+    width: 250px;
     height: 200px;
     display: flex;
     flex-direction: column;

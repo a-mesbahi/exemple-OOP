@@ -5,7 +5,11 @@ if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $date = $_POST['date'];
     $users = new user();
-    $data = $users->setPizzas($name, $email,$date);
+    $data = $users->setPizzas($name, $date, $email);
+    if(mysqli_query($users->connection(), $data)){
+        header('location:user_validation.php');
+    }
+    
 }
 ?>
 
@@ -37,7 +41,7 @@ if(isset($_POST['submit'])){
                         <label for="">Elements : </label>
                         <input type="text" name="email">
                     </div>
-                    <input type="submit" value="submit" class="submit">
+                    <input type="submit" value="submit" class="submit" name="submit">
             </form>
         </div>
     </div>

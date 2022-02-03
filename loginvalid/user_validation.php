@@ -26,15 +26,15 @@
             <div class="pizza-card">
                 <p>
                     <strong>Created by:</strong>
-                    <?= $doctor['nom'];?>
+                    <?= $doctor['createdBy'];?>
                 </p>
                 <p>
                     <strong>date:</strong>
-                    <?= $doctor['prenom'];?>
+                    <?= $doctor['date'];?>
                 </p>
                 <p>
-                    <strong>Created by:</strong>
-                    <?= $doctor['specialite'];?>
+                    <strong>Elements :</strong>
+                    <?= $doctor['elements'];?>
                 </p>
             </div>
 
