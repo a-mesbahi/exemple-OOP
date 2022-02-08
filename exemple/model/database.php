@@ -1,18 +1,13 @@
 <?php 
 
 
-
-
-
-
-
 class db{
     private $serverName;
     private $userName;
     private $password;
     private $dbName;
 
-    public function connection(){
+    protected function connection(){
         $this->serverName = "localhost";
         $this->userName = "Amine";
         $this->password = "teste123";
@@ -25,10 +20,6 @@ class db{
 
 
 class user extends db{
-    // function __construct()
-    // {
-    //     $name
-    // }
     public function getPizzas(){
         $sql = "SELECT * FROM pizza";
         $result = $this->connection()->query($sql);
@@ -38,7 +29,23 @@ class user extends db{
     public function setPizzas($name, $date, $elements ){
         $sql = "INSERT INTO pizza(createdBy,date, elements)
         VALUES ('$name', '$date', '$elements')";
-        return $sql;
+        if(mysqli_query($this->connection(), $sql)){
+            header('location:show-pizza.php');
+        };
+    }
+}
+class pizza extends db{
+    public function selectPizza($id){
+        $sql = "SELECT * FROM pizza WHERE id = $id";
+        $result = $this->connection()->query($sql);
+        $data = mysqli_fetch_assoc($result);
+        return $data ;
+    } 
+    public function deletePizza($id){
+        $sql = "DELETE FROM pizza WHERE id = $id";
+        if(mysqli_query($this->connection(), $sql)){
+            header('location:show-pizza.php');
+        };
     }
 }
 

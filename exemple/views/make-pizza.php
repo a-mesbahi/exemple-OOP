@@ -1,16 +1,6 @@
 <?php 
-require_once 'database.php';
-if(isset($_POST['submit'])){
-    $name = $_POST['username'];
-    $email = $_POST['email'];
-    $date = $_POST['date'];
-    $users = new user();
-    $data = $users->setPizzas($name, $date, $email);
-    if(mysqli_query($users->connection(), $data)){
-        header('location:user_validation.php');
-    }
-    
-}
+
+    require_once '../controllers/make-pizza.controller.php'
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +9,13 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styleMake.css" rel="stylesheet">
+    <link href="../assets/styleMake.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <div class="header">
         <h1>PIZZA ADD</h1>
+        <a href="show-pizza.php">View Pizzas</a>
     </div>
     <div class="main">
         <div class="form-container">

@@ -45,13 +45,15 @@ input{
 }
 .container{
     box-sizing: border-box;
-    width: 100%;
-    height: 70vh;
+    width: 80%;
+    min-height: 70vh;
+    max-height:max-content ;
     /* height: max-content; */
     padding: 20px 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0px auto;
     /* background-color: darkolivegreen; */
 }
 .pizza-card{
@@ -63,6 +65,7 @@ input{
     justify-content: space-evenly;
     border: 1px solid;
     margin-right: 20px;
+    margin-top: 10px;
     padding: 10px;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
@@ -71,10 +74,16 @@ input{
     height: 15vh;
     background-color: crimson;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     font-size: 30px;
 }
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
 .header_title{
     color: white;
 }
@@ -87,4 +96,20 @@ input{
     align-items: center;
     color: white;
     
+}
+.pizza-form{
+    width: min-content;
+    height: min-content;
+    margin: 0px auto;
+}
+.pizza-form input{
+    width: 80px;
+    height: 40px;
+    background-color: crimson;
+    color: white;
+    border: none;
+}
+.pizza-form input:hover{
+    cursor: pointer;
+    background-color: rgba(220, 20, 60, 0.767);
 }
